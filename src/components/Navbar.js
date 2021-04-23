@@ -68,7 +68,7 @@ export default function Navbar() {
                 display={{ base: "flex", md: "none" }}
                 aria-label="Open menu"
                 fontSize="20px"
-                color={useColorModeValue("gray.800", "inherit")}
+                color={useColorModeValue("gray.800", "white")}
                 variant="ghost"
                 icon={<AiOutlineMenu />}
                 onClick={mobileNav.onOpen}
@@ -92,6 +92,7 @@ export default function Navbar() {
                 <CloseButton
                   aria-label="Close menu"
                   onClick={mobileNav.onClose}
+                  color={useColorModeValue("gray.800", "white")}
                 />
 
                 <Button w="full" variant="ghost">
