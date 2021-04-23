@@ -39,7 +39,7 @@ function App() {
         <GlobalStyle>
           <BrowserRouter>
             <Switch>
-              <Route exact path="/" component={Homepage} />
+              <Route exact path="/" component={HomePage} />
               <Route path="/test" component={Header} />
               {/* <Main exact path="/projects" component={Projects} /> */}
             </Switch>
