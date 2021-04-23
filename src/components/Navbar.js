@@ -41,7 +41,11 @@ export default function Navbar() {
               {/* <Logo /> */}
               <VisuallyHidden>Choc</VisuallyHidden>
             </chakra.a>
-            <chakra.h1 fontSize="2xl" fontWeight="bold">
+            <chakra.h1
+              fontSize="2xl"
+              fontWeight="bold"
+              color={useColorModeValue("gray.800", "white")}
+            >
               Choc
             </chakra.h1>
           </Flex>
