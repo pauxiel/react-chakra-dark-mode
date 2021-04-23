@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import {
+  ChakraProvider,
+  ColorModeProvider,
+  useColorMode,
+} from "@chakra-ui/react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import customTheme from "./theme";
+import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
+import { Global, css } from "@emotion/react";
+
+const GlobalStyle = ({ children }) => {
+  const { colorMode } = useColorMode();
+
+  return (
+    <>
+      <Global
+        styles={css`
+          body {
+            background: ${colorMode === "light" ? "white" : "#1a202c"};
+          }
+        `}
+      />
+      {children}
+    </>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider resetCSS theme={customTheme}>
+      <ColorModeProvider
+        options={{
+          initialColorMode: "light",
+          useSystemColorMode: true,
+        }}
+      >
+        <GlobalStyle>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Header} />
+              <Route path="/test" component={HomePage} />
+              {/* <Main exact path="/projects" component={Projects} /> */}
+            </Switch>
+          </BrowserRouter>
+        </GlobalStyle>
+      </ColorModeProvider>
+    </ChakraProvider>
   );
 }
 
