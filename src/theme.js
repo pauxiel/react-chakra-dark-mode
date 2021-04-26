@@ -24,6 +24,7 @@ const overrides = {
     medium: 600,
     bold: 700,
   },
+
   fontSizes: {
     xs: "12px",
     sm: "14px",

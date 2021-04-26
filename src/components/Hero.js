@@ -36,7 +36,8 @@ const Hero = () => {
         alignItems="start"
         justifyContent="center"
         px={{ base: 4, lg: 20 }}
-        py={24}
+        pt={{ base: 20, md: 24 }}
+        pb={{ base: 20, md: 24 }}
       >
         <Badge
           color="white"
